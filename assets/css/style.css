@@ -338,13 +338,14 @@ main {
   text-decoration: underline;
 }
 
-/* バッジ → その下に「くわしく見る」 */
+/* バッジ → その下に「くわしく見る」（右寄せ） */
 .app-card-actions {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   gap: 8px;
   margin-top: 10px;
+  width: 100%;
 }
 
 .app-card p {
@@ -354,6 +355,7 @@ main {
 }
 
 .app-card .more {
+  align-self: flex-end;
   color: var(--accent);
   text-decoration: none;
   font-weight: 700;
@@ -411,6 +413,42 @@ main {
   background: var(--surface);
   border: 1px solid var(--line);
   color: var(--ink-soft);
+}
+
+/* アプリの画面（スクリーンショット）：PC は 4 列、スマホは横スクロール */
+.screens {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.screens img {
+  width: 100%;
+  height: auto;
+  border-radius: 18px;
+  border: 1px solid var(--line);
+}
+
+@media (max-width: 680px) {
+  .screens {
+    grid-template-columns: none;
+    grid-auto-flow: column;
+    grid-auto-columns: 62%;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    margin-inline: calc(var(--gutter) * -1);
+    padding-inline: var(--gutter);
+    padding-bottom: 8px;
+    scroll-padding-inline: var(--gutter);
+  }
+
+  .screens li {
+    scroll-snap-align: start;
+  }
 }
 
 .genres {
@@ -471,6 +509,28 @@ main {
 
 .store-badge-sm img {
   height: 40px;
+}
+
+/* アプリカード：ストアのバッジを横並び（未公開のストアは「近日公開」） */
+.app-card-stores {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+}
+
+.store-soon-sm {
+  display: inline-flex;
+  align-items: center;
+  height: 40px;
+  padding: 0 9px;
+  border-radius: 8px;
+  border: 1px dashed var(--ink-soft);
+  color: var(--ink-soft);
+  font-weight: 700;
+  font-size: 0.72rem;
+  letter-spacing: 0;
+  white-space: nowrap;
 }
 
 .hero-badge {
