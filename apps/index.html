@@ -5,6 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>アプリ | TakateLAB</title>
   <meta name="description" content="TakateLAB が提供しているアプリの一覧です。">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="TakateLAB">
+  <meta property="og:title" content="アプリ | TakateLAB">
+  <meta property="og:description" content="TakateLAB が提供しているアプリの一覧です。">
+  <meta property="og:url" content="https://takatelab.github.io/apps/">
+  <meta property="og:image" content="https://takatelab.github.io/assets/img/og-site.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="ja_JP">
+  <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" href="../assets/img/mark.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -40,14 +50,21 @@
     <section class="section" aria-label="アプリ一覧">
       <ul class="app-list">
         <li>
-          <a class="app-card" href="kotobatown/">
-            <img src="../assets/img/kotobatown-icon.png" alt="" width="96" height="96">
+          <article class="app-card">
+            <a class="app-icon-link" href="kotobatown/" tabindex="-1" aria-hidden="true">
+              <img class="app-icon" src="../assets/img/kotobatown-icon.png" alt="" width="96" height="96">
+            </a>
             <div>
-              <h3>ことばタウン</h3>
+              <h3><a href="kotobatown/">ことばタウン</a></h3>
               <p>イラストと声で身近なことばにふれる、幼児向けのことばカードアプリ。日本語と英語に対応。</p>
-              <span class="more">くわしく見る →</span>
+              <div class="app-card-actions">
+                <a class="more" href="kotobatown/">くわしく見る →</a>
+                <a class="store-badge store-badge-sm" href="https://apps.apple.com/app/id6823206970" target="_blank" rel="noopener">
+                  <img src="../assets/img/app-store-badge-ja.svg" alt="App Store からダウンロード" width="109" height="40">
+                </a>
+              </div>
             </div>
-          </a>
+          </article>
         </li>
         <li>
           <div class="app-card placeholder">
