@@ -440,7 +440,23 @@ main {
 .store-row {
   display: flex;
   flex-wrap: wrap;
-  gap: 12px;
+  align-items: center;
+  gap: 16px;
+}
+
+/* Apple 公式バッジ：高さ 40px 以上、周囲に高さの 1/4 以上の余白（Apple のガイドライン） */
+.store-badge {
+  display: inline-block;
+  line-height: 0;
+}
+
+.store-badge img {
+  height: 60px;
+  width: auto;
+}
+
+.store-badge:hover {
+  opacity: 0.85;
 }
 
 .store-row .soon {
